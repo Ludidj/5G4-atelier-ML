@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bibliotheque-binding"
+version = "0.1.0"
+description = "Interface pybind11 pour le gestionnaire de bibliotheque C++ original"
+requires-python = ">=3.12"
+dependencies = ["customtkinter", "pybind11"]

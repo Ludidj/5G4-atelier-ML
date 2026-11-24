@@ -12,3 +12,9 @@ __pycache__/
 
 # Binaire généré par la compilation du C++ original (agent/)
 agent/bibliotheque
+
+# Artefacts de compilation du module pybind11 (Partie 3)
+partie3/build/
+*.so
+*.pyd
+.pytest_cache/
