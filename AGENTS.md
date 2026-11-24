@@ -2,6 +2,12 @@
 
 Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissage/`. No application entrypoint, package, or test suite.
 
+## Partie 3 — interface graphique C++ / Python (en cours)
+
+- `agent/` is the original C++ library program copied unchanged from `Ludidj/420-5G4-ML` (sources, `CMakeLists.txt`, `data/books.txt`, `data/users.txt`, `.devcontainer/`). Do not change its logic: the Python GUI must reuse these classes through pybind11 and reproduce the original menu labels and behavior.
+- The original CLI is `main.cpp` (menu 1..13 + 0 to quit). It saves both data files on exit, so test it on a copy of `agent/data/`, not on the tracked files. `g++ -std=c++17 -Wall -Wextra -Wpedantic agent/*.cpp -o <sortie>` compiles it here; `cmake` is only available via `agent/.devcontainer/`. The generated `agent/bibliotheque` binary is gitignored.
+- Keep the notebooks in `apprentissage/` untouched; they are the delivered parties 1 and 2. Work in progress order: A C++ integration → B Python deps → C pybind11 binding → D Python/C++ checks → E CustomTkinter GUI → F tests → G `chatsLogs/` Markdown exports + AGENTS.md → H final `[REMISE] Partie 3` commit and PR.
+
 ## Two independent notebook pipelines
 
 - Pokémon win prediction: `apprentissage/partie1_2.ipynb` → `partie3_entrainement.ipynb` → `partie3_predictions.ipynb`, in that order. The first writes `datas/dataset.csv`; the second trains a RandomForest and writes `apprentissage/modele/modele_pokemon.mod` (joblib); the third loads that model plus `datas/pokedex.csv`.

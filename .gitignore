@@ -9,3 +9,6 @@ datas/
 
 __pycache__/
 *.pyc
+
+# Binaire généré par la compilation du projet C++ original (agent/)
+agent/bibliotheque
