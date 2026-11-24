@@ -1,4 +1,20 @@
 
-*.csv
+.venv/
+.venv-1/
+venv/
 
+*.csv
 datas/
+
+
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Binaire généré par la compilation du C++ original (agent/)
+agent/bibliotheque
+
+# Artefacts de compilation du module pybind11 (Partie 3)
+partie3/build/
+*.so
+*.pyd
