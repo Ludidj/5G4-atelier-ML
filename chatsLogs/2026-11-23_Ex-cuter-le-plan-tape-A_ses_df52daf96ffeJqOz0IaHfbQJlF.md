@@ -4,7 +4,7 @@
 - Agent : `build`
 - Modèle : `opencode/big-pickle`
 - Créée le : 2026-11-23T23:51:25+00:00
-- Exportée le : 2026-11-24T02:05:53+00:00
+- Exportée le : 2026-11-24T02:07:26+00:00
 - Raison : traçabilité des échanges de la Partie 3 (les raisonnements et appels d'outils sont omis).
 
 ---
