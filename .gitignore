@@ -12,3 +12,7 @@ __pycache__/
 
 # Binaire généré par la compilation du projet C++ original (agent/)
 agent/bibliotheque
+
+# Artifacts du module pybind11 (Partie 3)
+partie3/build/
+*.so

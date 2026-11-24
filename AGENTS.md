@@ -7,6 +7,7 @@ Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissag
 - `agent/` is the original C++ library program copied unchanged from `Ludidj/420-5G4-ML` (sources, `CMakeLists.txt`, `data/books.txt`, `data/users.txt`, `.devcontainer/`). Do not change its logic: the Python GUI must reuse these classes through pybind11 and reproduce the original menu labels and behavior.
 - The original CLI is `main.cpp` (menu 1..13 + 0 to quit). It saves both data files on exit, so test it on a copy of `agent/data/`, not on the tracked files. `g++ -std=c++17 -Wall -Wextra -Wpedantic agent/*.cpp -o <sortie>` compiles it here; `cmake` is only available via `agent/.devcontainer/`. The generated `agent/bibliotheque` binary is gitignored.
 - Keep the notebooks in `apprentissage/` untouched; they are the delivered parties 1 and 2. Work in progress order: A C++ integration → B Python deps → C pybind11 binding → D Python/C++ checks → E CustomTkinter GUI → F tests → G `chatsLogs/` Markdown exports + AGENTS.md → H final `[REMISE] Partie 3` commit and PR.
+- `partie3/` is the new code: `pybind_module.cpp` exposes the original `Book`, `User`, `Library` and `FileManager` methods (no new logic; `main.cpp`'s CLI is not bound). Build with `cd partie3 && /usr/local/bin/python3.12 setup.py build_ext --inplace`; generated `build/` and `.so` are gitignored. Import from that directory with `import bibliotheque_binding`.
 
 ## Two independent notebook pipelines
 
