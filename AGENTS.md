@@ -23,3 +23,8 @@ Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissag
 - No `requirements.txt`, `pyproject.toml`, lockfile, CI, or test/lint/build config. The only dependency definition is `.devcontainer/devcontainer.json` → `postCreateCommand`: `pip3 install --user pandas matplotlib seaborn ipykernel joblib scikit-learn tensorflow keras-preprocessing` (Python 3.12 image). `test_modele.ipynb` also imports Pillow, which is absent from that list.
 - `.venv/bin/python` currently symlinks to system Python 3.9 while the installed site-packages are 3.12; use `/usr/local/bin/python3.12` (the Jupyter kernel) for ad-hoc checks.
 - `classification.ipynb` forces CPU with `tf.config.set_visible_devices([], 'GPU')` and runs 10 + 50 epochs; re-running it is slow.
+
+Etat actuel du projet
+
+Le depot contient les fichiers du TP C++, dans le dossier agent et compile et en plus les focntionalit/ compile aussi.
+
