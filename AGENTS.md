@@ -26,6 +26,7 @@ Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissag
 
 ## Environment / verification
 
-- No `requirements.txt`, `pyproject.toml`, lockfile, CI, or test/lint/build config. The only dependency definition is `.devcontainer/devcontainer.json` → `postCreateCommand`: `pip3 install --user pandas matplotlib seaborn ipykernel joblib scikit-learn tensorflow keras-preprocessing` (Python 3.12 image). `test_modele.ipynb` also imports Pillow, which is absent from that list.
+- No `requirements.txt`, `pyproject.toml`, lockfile, CI, or test/lint/build config. The only dependency definition is `.devcontainer/devcontainer.json` → `postCreateCommand`: `pip3 install --user pandas matplotlib seaborn ipykernel joblib scikit-learn tensorflow keras-preprocessing customtkinter pybind11` (Python 3.12 image; the two last packages were added for Partie 3). `test_modele.ipynb` also imports Pillow, which is absent from that list.
+- Partie 3 dependencies checked with `/usr/local/bin/python3.12`: `tkinter` 8.6 (already present), `customtkinter` 6.0.0, `pybind11` 3.1.0, `PIL` 13.0.0. The `agent/.devcontainer/Dockerfile` (C++ container) already installs `python3-pybind11`, `pybind11-dev` and `python3-tk`.
 - `.venv/bin/python` currently symlinks to system Python 3.9 while the installed site-packages are 3.12; use `/usr/local/bin/python3.12` (the Jupyter kernel) for ad-hoc checks.
 - `classification.ipynb` forces CPU with `tf.config.set_visible_devices([], 'GPU')` and runs 10 + 50 epochs; re-running it is slow.
