@@ -26,5 +26,8 @@ Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissag
 
 Etat actuel du projet
 
-Le depot contient les fichiers du TP C++, dans le dossier agent et compile et en plus les focntionalit/ compile aussi.
 
+-le dossier partie 3 contient la configuration de python et l'integration de pybind11
+-le fichier "pybind_modulke.cpp" envoie els classe du TP c++ 'a python
+-le fichier test 'test_pybibing.py' test l integration des deux langages de lprogrammation, 
+-compilation de test est foncitonelle
