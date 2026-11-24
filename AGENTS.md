@@ -12,6 +12,10 @@ Small ML workshop repo: all logic lives in Jupyter notebooks under `apprentissag
 - `partie3/app.py` is the CustomTkinter GUI (`/usr/local/bin/python3.12 app.py -d ../agent/data` from `partie3/`). `ModeleBibliotheque` holds the menu actions and returns the original C++/CLI strings; `BibliothequeApp` only displays them. `capture_sortie_cpp()` redirects fd 1 and flushes libc stdio to show the original `displayAllBooks`/`displayAvailableBooks`/`displayAllUsers`/load messages verbatim. The GUI accepts the original `-d`/`--data-dir` option; without it, it starts empty like the CLI. See `partie3/README.md`.
 - `partie3/test_interface.py` (`/usr/local/bin/python3.12 test_interface.py` from `partie3/`) checks the 14 original button labels, compares every GUI action text with the CLI, drives the input dialogs with Enter, verifies data written by the GUI is read back by the CLI, and skips nothing: it needs a working `DISPLAY` (`:2` here). Both test scripts use temporary copies of `agent/data/`.
 
+## Traçabilité
+
+- `chatsLogs/` contains the OpenCode conversations exported as Markdown (one file per session, user/assistant messages; tool calls and reasoning omitted). Regenerate with `/usr/local/bin/python3.12 partie3/exporter_chats.py`, which calls `opencode session list` and `opencode session export` (JSON → Markdown). Re-run it just before the final `[REMISE] Partie 3` commit so the last session is included.
+
 ## Two independent notebook pipelines
 
 - Pokémon win prediction: `apprentissage/partie1_2.ipynb` → `partie3_entrainement.ipynb` → `partie3_predictions.ipynb`, in that order. The first writes `datas/dataset.csv`; the second trains a RandomForest and writes `apprentissage/modele/modele_pokemon.mod` (joblib); the third loads that model plus `datas/pokedex.csv`.

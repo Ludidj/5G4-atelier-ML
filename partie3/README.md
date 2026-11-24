@@ -9,6 +9,7 @@ Le code C++ original se trouve dans `../agent/` et n'est pas modifié.
 - `app.py` : interface CustomTkinter qui remplace le menu en ligne de commande (`agent/main.cpp`). Les 13 actions et `0.  Quitter` gardent leurs libellés et leurs messages d'origine.
 - `test_connexion.py` : comparaison Python/C++ avec le CLI (étape D).
 - `test_interface.py` : tests de l'interface et de ses actions (étape F).
+- `exporter_chats.py` : convertit les exports JSON d'OpenCode en Markdown dans `../chatsLogs/` (étape G).
 
 ## Compilation du module pybind11
 
